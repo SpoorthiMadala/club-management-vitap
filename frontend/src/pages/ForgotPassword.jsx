@@ -90,7 +90,7 @@ const ForgotPassword = () => {
                 <div className="max-w-md w-full space-y-8 animate-fade-in">
                     <div className="glass-card p-8">
                         <div className="text-center mb-8">
-                            <h2 className="text-3xl font-bold text-black">Forgot Password</h2>
+                            <h2 className="text-3xl font-bold text-primary">Forgot Password</h2>
                             <p className="mt-2 text-gray-700 dark:text-gray-200">
                                 {step === 1 ? 'Enter your email to receive OTP' : 'Enter OTP and new password'}
                             </p>
@@ -111,7 +111,7 @@ const ForgotPassword = () => {
                         {step === 1 ? (
                             <form onSubmit={handleSendOTP} className="space-y-6">
                                 <div>
-                                    <label htmlFor="email" className="block text-sm font-semibold text-black">
+                                    <label htmlFor="email" className="block text-sm font-semibold text-primary">
                                         Email Address
                                     </label>
                                     <input
@@ -223,4 +223,5 @@ const ForgotPassword = () => {
 };
 
 export default ForgotPassword;
+
 
