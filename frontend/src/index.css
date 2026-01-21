@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #d9d0b4 0%, #879e82 100%);
+  min-height: 100vh;
+  overflow: hidden;
+  color: #666b5e;
+}
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#7d6b57] text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl hover:bg-[#666b5e] transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none min-h-[44px] text-sm sm:text-base;
+  }
+
+  .btn-secondary {
+    @apply bg-white/80 backdrop-blur-sm text-[#7d6b57] font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 border-2 border-[#879e82]/30 min-h-[44px] text-sm sm:text-base;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-red-600 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 min-h-[44px];
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-[#879e82]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7d6b57] focus:border-transparent transition-all duration-200 bg-white/70 backdrop-blur-sm text-[#666b5e] placeholder:text-[#879e82] min-h-[44px] text-sm sm:text-base;
+  }
+
+  .card {
+    @apply bg-white/75 backdrop-blur-md rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 text-[#666b5e] border border-white/40;
+  }
+
+  .glass-card {
+    @apply bg-white/65 backdrop-blur-xl rounded-xl shadow-2xl border-2 border-white/50 text-[#666b5e];
+  }
+
+  /* Navbar specific - ensure full width */
+  nav.glass-card {
+    @apply w-full max-w-none;
+  }
+}
+
+/* Hide scrollbars */
+* {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-size: 1000px 100%;
+}
+
+/* Tablet Responsive Improvements (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Auth pages - better form sizing for tablets */
+  .glass-card {
+    @apply max-w-xl mx-auto;
+  }
+
+  /* Improve touch targets for tablets */
+  .btn-primary,
+  .btn-secondary,
+  .btn-danger {
+    @apply min-h-[48px] py-3.5 px-8 text-base;
+  }
+
+  .input-field {
+    @apply min-h-[48px] py-3.5 px-5 text-base;
+  }
+
+  /* Better spacing for tablet layouts */
+  body {
+    @apply text-base;
+  }
+
+  /* Optimize card layouts for tablets */
+  .card {
+    @apply p-5;
+  }
+}
+
+/* Tablet Portrait (768px - 900px) */
+@media (min-width: 768px) and (max-width: 900px) and (orientation: portrait) {
+  .glass-card {
+    @apply max-w-lg px-6 py-8;
+  }
+
+  /* Slightly smaller text for portrait tablets */
+  h2 {
+    @apply text-2xl;
+  }
+}
+
+/* Tablet Landscape (900px - 1024px) */
+@media (min-width: 900px) and (max-width: 1024px) and (orientation: landscape) {
+  .glass-card {
+    @apply max-w-2xl px-10 py-10;
+  }
+
+  /* More horizontal space in landscape */
+  .input-field {
+    @apply px-6;
+  }
+}
+
+/* Large tablets and small desktops */
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .glass-card {
+    @apply max-w-2xl;
+  }
+}
