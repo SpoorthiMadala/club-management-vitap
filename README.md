@@ -240,10 +240,8 @@ club-management/
 - Change PORT in backend `.env`
 - Update proxy in frontend `vite.config.js`
 
-## License
-
-MIT
 
 ## Support
 
 For issues or questions, please create an issue in the repository.
+
